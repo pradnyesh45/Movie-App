@@ -2,6 +2,7 @@ import React from 'react';
 import {data} from '../data';
 import Navbar from './Navbar';
 import MovieCard from './MovieCard';
+import movies from '../reducers';
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         </div>
 
         <div className="list">
-          {data.map(movie => (
-            <MovieCard movie={movie} />
+          {data.map((movie, index) => (
+            <MovieCard movie={movie} key={`movies-${index}`} />
           ))}
         </div>
       </div>
