@@ -2,8 +2,7 @@ import React from 'react';
 import {data} from '../data';
 import Navbar from './Navbar';
 import MovieCard from './MovieCard';
-import movies from '../reducers';
-
+import { addMovies } from '../actions';
 class App extends React.Component {
   componentDidMount() {
     const {store} = this.props;
@@ -13,17 +12,14 @@ class App extends React.Component {
     });
     // make api call
     // dispatch action
-    store.dispatch({
-      type: 'ADD_MOVIES',
-      movies: data
-    });
+    store.dispatch(addMovies(data));
 
     console.log('STATE', this.props.store.getState());
   }
 
   render() {
-    const movies = this.props.store.getState();
-    console.log('RENDER');
+    const {list} = this.props.store.getState(); // {list: [], favourites: []}
+    console.log('RENDER', this.props.store.getState());
     return (
       <div className="App">
         <Navbar />
