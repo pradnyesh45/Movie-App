@@ -1,6 +1,7 @@
 import React from 'react';
 // import {data} from '../data';
 import {addMovieToList, handleMovieSearch} from '../actions';
+import {StoreContext} from '../index';
 
 class Navbar extends React.Component {
 
@@ -35,8 +36,10 @@ class Navbar extends React.Component {
         return (
             <div className="nav">
                 <div className="search-container">
-                    <input onChange={this.handleChange} />
-                    <button id="search-btn" onClick={this.handleSearch}>Search</button>
+                    <input onChange={this.handleSearchChange} />
+                    <button id="search-btn" onClick={this.handleSearchClick}>
+                        Search
+                    </button>
                 
                     {showSearchResults && 
                         <div className="search-results">
@@ -57,4 +60,16 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+class NavbarWrapper extends React.Component {
+    render() {
+        return (
+            <StoreContext.Consumer>
+                {(store) => (
+                    <Navbar dispatch={store.dispatch} search={this.props.search} />
+                )}
+            </StoreContext.Consumer>
+        );
+    }
+}
+
+export default NavbarWrapper;
