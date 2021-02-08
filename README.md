@@ -1,5 +1,22 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Screenshots
+
+When the website opens
+![](public/Screenshot from 2021-02-08 10-42-58.png)
+
+Searching for a particular movie in search box
+![](public/Screenshot from 2021-02-08 10-44-05.png)
+
+When movie is added to movies list
+![](public/Screenshot from 2021-02-08 10-44-11.png)
+
+When a particular movie is made favourite
+![](public/Screenshot from 2021-02-08 10-44-27.png)
+
+Favourites list
+![](public/Screenshot from 2021-02-08 10-44-33.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
